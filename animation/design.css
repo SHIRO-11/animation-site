@@ -124,7 +124,7 @@
     margin: 0;
     padding: 0;
     object-fit: cover;
-    /* この一行を追加するだけ！ */
+    /* この一行を追加するだけでトリミング！ */
 }
 
 #slide ul {
@@ -284,8 +284,6 @@
 }
 
 .main-profile {
-    position: absolute;
-    top: 0%;
     width: 100%;
     height: 100%;
     background-image: url("images/portfolio.jpg");
@@ -542,3 +540,393 @@
 /*-----------------------
 横からスライドアニメーションここまで
 -----------------------*/
+
+
+/*----------------------------------------
+メディアクエリ
+----------------------------------------*/
+
+@media screen and (max-width:480px){
+/*----------------------------------------
+一番上の画像
+----------------------------------------*/
+    .main {
+        background-color: #fff;
+        height: 400px;
+    }
+
+    .main-image {
+        height: 100%;
+        position: relative;
+        /*相対配置*/
+        background-color: #fff;
+    }
+
+    .main-image img {
+        height: 100%;
+    }
+
+    .main-image>h2 {
+        position: absolute;
+        /*絶対配置*/
+        top: 40%;
+        left: 50%;
+        width: 100%;
+        background-color: rgb(255, 255, 255, 0);
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        /*太字に*/
+        font-size: 4em;
+        /*サイズ2倍*/
+        font-family: "Sacramento", cursive;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .main-image>p {
+        position: absolute;
+        /*絶対配置*/
+        top: 70%;
+        left: 50%;
+        width: 100%;
+        -ms-transform: translate(-50%, -25%);
+        -webkit-transform: translate(-50%, -25%);
+        transform: translate(-50%, -30%);
+        font-weight: bold;
+        /*太字に*/
+        font-size: 0.5em;
+        /*サイズ2倍*/
+        text-align: center;
+        padding: 30px;
+    }
+
+    #slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#slide img {
+    height:100%;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    /* この一行を追加するだけ！ */
+}
+
+#slide ul {
+    height:100%;
+    position: relative;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#slide li {
+    position: absolute;
+    height:100%;
+}
+
+#button {
+    position: absolute;
+    bottom: 0;
+    left: 48%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#button ul {
+    list-style: none;
+    display: table;
+}
+
+#button ul li {
+    display: table-cell;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#button ul li .target {
+    opacity: 1;
+}
+
+#button ul li a {
+    text-indent: -9999px;
+    text-decoration: none;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: #a8dcdb;
+    opacity: 0.5;
+}
+/*----------------------------------------
+一番上の画像ここまで
+----------------------------------------*/
+
+
+/*----------------------------------------
+記事へのリンク2つ
+----------------------------------------*/
+    .main-article .row{
+        margin:0;
+    }
+
+    .main-article>h2 {
+        text-align: center;
+        margin: 10px auto;
+        padding: 15px;
+        width: 80%;
+        background-color: #000;
+        color: #fff;
+        border-radius: 40px;
+        background: linear-gradient(to bottom, #a6d900 0%, #ff4454 100%);
+        opacity: 0.5;
+        animation: huerotator 3s infinite alternate;
+    }
+
+    .article-image-box {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .article-image-box img {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        opacity: 0.7;
+        border: 3px solid rgb(0, 0, 0, 0.5);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: all 0.8s ease-in-out;
+        transition: all 0.7s ease-in-out;
+    }
+
+    .article-image-box:hover img {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    .caption {
+        position: absolute;
+        top: -110%;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        -webkit-transition: 0.3s;
+        transition: 0.6s;
+        opacity: 1;
+        color: #ddd;
+        text-align: center;
+    }
+
+    .article-image-box:hover .caption {
+        top: 0;
+        left: 0;
+    }
+
+    .article-image-box>a>.caption {
+        font-size: 14px;
+        line-height: 1.5em;
+    }
+
+    .article-image-box>a>.caption>h3 {
+        margin: 30px auto;
+        font-size: 20px;
+    }
+
+    /*-----------------------
+    プロフィール
+    -----------------------*/
+
+    .profile {
+        position: relative;
+        width: 100%;
+        height: 900px;
+        overflow: hidden;
+    }
+
+    .profile h2 {
+        text-align: center;
+        margin: 10px auto;
+        padding: 15px;
+        width: 50%;
+        background-color: #000;
+        color: #fff;
+        border-radius: 40px;
+        background: linear-gradient(to bottom, #a6d900 0%, #ff4454 100%);
+        opacity: 0.5;
+        animation: huerotator 3s infinite alternate;
+    }
+
+    .main-profile {
+        width: 100%;
+        height: 100%;
+        background-image: url("images/portfolio.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .main-profile p {
+        color: #fff;
+        margin: 0 10px 0 10px;
+        font-size:14px;
+    }
+
+    .my-profile {
+        position: relative;
+        height:25%;
+        margin-top: 10px;
+        z-index: 3;
+    }
+
+    .my-profile h3 {
+        margin: 0 0 10px 20px;
+        padding-top:10px;
+        color: #fff;
+    }
+
+    .trigger {
+        position: relative;
+        margin-top: 0;
+        height:35%;
+        z-index: 1;
+    }
+
+    .trigger h3 {
+        margin: 20px;
+        color: #fff;
+    }
+
+    .aim {
+        position: relative;
+        margin-top: 50px;
+        height:30%;
+        z-index: 1;
+    }
+
+    .aim h3 {
+        margin: 20px;
+        color: #fff;
+    }
+
+    /*-----------------------
+    プロフィールここまで
+    -----------------------*/
+
+
+    /*-----------------------
+    ポートフォリオ
+    -----------------------*/
+
+    .portfolio-wrapper {
+        height: 600px;
+    }
+
+    .portfolio>h2 {
+        text-align: center;
+        margin: 10px auto;
+        padding: 15px;
+        width: 30%;
+        background-color: #000;
+        color: #fff;
+        border-radius: 40px;
+        background: linear-gradient(to bottom, #a6d900 0%, #ff4454 100%);
+        opacity: 0.5;
+        animation: huerotator 3s infinite alternate;
+    }
+
+    .portfolio-wrapper h2 {
+        margin: 30px 0 20px 0;
+        font-size: 20px;
+    }
+
+    .portfolio-wrapper a {
+        margin: 10px 20px 0 20px;
+        font-size: 14px;
+        padding: 0 0 0 0px;
+        text-align: left;
+        display: block;
+    }
+
+    .portfolio-wrapper p {
+        margin: 0 20px 20px 20px;
+        font-size: 14px;
+        padding: 0 0 0 0px;
+        text-align: left;
+        display: block;
+    }
+
+    .promatch {
+        width: 50%;
+        height: 50%;
+        display: inline-block;
+        background-image: url("portfolio/promatch.jpg");
+        background-size: 150% 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .portfolio-wrapper {
+        font-size: 0;
+    }
+
+    .websites {
+        width: 50%;
+        height: 50%;
+        background-image: url("portfolio/web.jpg");
+        background-size: 150% 100%;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .my-blog {
+        width: 50%;
+        height: 50%;
+        background-image: url("portfolio/blog.jpg");
+        background-size: 120% 100%;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .other {
+        width: 50%;
+        height: 50%;
+        background-image: url("portfolio/other.jpg");
+        background-size: 120% 100%;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .portfolio-caption {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        -webkit-transition: 0.3s;
+        transition: 0.6s;
+        opacity: 1;
+        color: #ddd;
+        text-align: center;
+    }
+
+    .portfolio-slide:hover .portfolio-caption {
+        top: 0;
+        left: 0;
+    }
+
+    /*-----------------------
+    ポートフォリオここまで
+    -----------------------*/
+}
