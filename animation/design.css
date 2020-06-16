@@ -215,7 +215,10 @@
     position: relative;
     overflow: hidden;
     vertical-align: bottom;
-    width: 50%;
+}
+
+.row .col-md-6 {
+    padding: 0;
 }
 
 .article-image-box img {
