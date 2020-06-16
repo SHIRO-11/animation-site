@@ -1,0 +1,229 @@
+h2 {
+}
+
+.main-visual {
+  width: 100%;
+  height: 400px;
+  color: #3434;
+  background-color: rgb(180, 180, 100);
+  position: relative;
+}
+
+.main-visual h2 {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  /*-webkit-transform : translateY(-50%);*/
+  /*transform : translateY(-50%);*/
+}
+
+.main-content {
+}
+
+.fade-out {
+  animation: fade-out-anime 0.1s forwards;
+}
+
+@keyframes fade-out-anime {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fade-in-anime 3s forwards;
+}
+
+@keyframes fade-in-anime {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+#alert-box-wrapper {
+  position: relative;
+}
+
+#alert-bg {
+  margin: auto;
+  width: 50%;
+  height: 300px;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  /*上下左右中央に*/
+  display: none;
+}
+
+#alert-box {
+  background-color: blue;
+  margin: 100px auto;
+  text-align: center;
+  padding-top: 25px;
+  width: 300px;
+  height: 85px;
+  border-radius: 20px;
+}
+
+#alert-comp {
+  margin-top: 50px;
+}
+
+.roatation {
+  height: 100px;
+  display: inline-block;
+  border: 2px solid #d88da4;
+}
+
+.roatation-btn-1 {
+  margin: 10px auto;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  background-color: #e2ffff;
+  /*色の指定*/
+  transition: all 3s;
+}
+
+.roatation-y-1080 {
+  opacity: 0;
+  transform: rotateY(1080deg);
+}
+
+.roatation-btn-2 {
+  margin: 10px auto;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  background-color: #e2ffff;
+  /*色の指定*/
+  transition: all 3s;
+}
+
+.roatation-x-2160 {
+  opacity: 0;
+  transform: rotateX(2160deg);
+}
+
+.roatation-btn-3 {
+  margin: 10px auto;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  background-color: #e2ffff;
+  /*色の指定*/
+  transition: all 5s ease-in;
+}
+
+.roatation-z-3000 {
+  opacity: 0;
+  transform: rotateZ(3000deg) scale(5);
+}
+
+.roatation-btn-4 {
+  margin: 10px auto;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  background-color: #e2ffff;
+  /*色の指定*/
+}
+
+.roatation-big-small {
+  animation-name: big-small;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes big-small {
+  25% {
+    transform: rotateX(360deg) scale(0);
+  }
+
+  50% {
+    transform: rotateX(720deg) scale(1.5);
+  }
+
+  75% {
+    transform: rotateX(1080deg) scale(0);
+  }
+
+  100% {
+    transform: rotateX(1440deg) scale(1);
+  }
+}
+
+.click-animation-wrapper {
+  height: 1000px;
+}
+
+.trans-btn-1 {
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #ffcca4;
+  text-align: center;
+  transition: all 2s;
+}
+
+.trans-btn-1-change {
+  margin-left: 200px;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #00972a;
+  border-radius: 50px;
+  background-color: #00cf58;
+  text-align: center;
+}
+
+.trans-btn-2 {
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  transition: all 2s;
+  background-color: #00dd00;
+}
+
+.trans-btn-2-change {
+  animation: trans-anim 3s;
+}
+
+@keyframes trans-anim {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  25% {
+    transform: translate(200px, 0px);
+  }
+
+  50% {
+    transform: translate(0px, 0px);
+  }
+
+  75% {
+    transform: translate(500px, 0px);
+  }
+
+  100% {
+    transform: translate(0px, 0);
+  }
+}

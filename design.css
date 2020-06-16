@@ -1,0 +1,541 @@
+@import url("https://fonts.googleapis.com/css?family=Sacramento");
+
+
+/*-----------------------
+グローバルナビゲーションの設定
+-----------------------*/
+.site-header {
+    width: 100%;
+    position: fixed;
+    background-color: #000;
+    opacity: 0.7;
+    transition: 1s;
+    z-index: 1 !important;
+}
+
+.site-header.hide {
+    opacity: 0;
+}
+
+.site-header ul {
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
+    text-align: center;
+}
+
+.site-header ul li {
+    display: table-cell;
+    min-width: 30px;
+}
+
+.site-header ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+}
+
+.site-header ul li .current {
+    background-color: #fff;
+}
+
+.site-header ul li.current a {
+    color: #555;
+}
+
+.site-header ul li:hover {
+    background-color: rgb(255, 255, 255, 0.7);
+}
+
+/*-----------------------
+ナビゲーションリンクここまで
+-----------------------*/
+
+/*-----------------------
+一番上の画像
+-----------------------*/
+
+.main {
+    background-color: #fff;
+    height: 600px;
+}
+
+.main-image {
+    height: 650px;
+    position: relative;
+    /*相対配置*/
+    background-color: #fff;
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.main-image>h2 {
+    position: absolute;
+    /*絶対配置*/
+    top: 30%;
+    left: 50%;
+    width: 60%;
+    background-color: rgb(255, 255, 255, 0);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    /*太字に*/
+    font-size: 6em;
+    /*サイズ2倍*/
+    font-family: "Sacramento", cursive;
+    text-align: center;
+    padding: 30px;
+}
+
+.main-image>p {
+    position: absolute;
+    /*絶対配置*/
+    top: 65%;
+    left: 50%;
+    width: 100%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    /*太字に*/
+    font-size: 1em;
+    /*サイズ2倍*/
+    text-align: center;
+    padding: 30px;
+}
+
+#slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#slide img {
+    width: 100%;
+    height: 650px;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    /* この一行を追加するだけ！ */
+}
+
+#slide ul {
+    position: relative;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#slide li {
+    position: absolute;
+    width: 100%;
+}
+
+#button {
+    position: absolute;
+    bottom: 0;
+    left: 48%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#button ul {
+    list-style: none;
+    display: table;
+}
+
+#button ul li {
+    display: table-cell;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#button ul li .target {
+    opacity: 1;
+}
+
+#button ul li a {
+    text-indent: -9999px;
+    text-decoration: none;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: #a8dcdb;
+    opacity: 0.5;
+}
+
+/*-----------------------
+一番上の画像ここまで
+-----------------------*/
+
+/*-----------------------
+記事へのリンク2つ
+-----------------------*/
+.main-article {
+    font-size: 0;
+
+}
+
+.main-article>h2 {
+    text-align: center;
+    margin: 10px auto;
+    padding: 15px;
+    width: 30%;
+    background-color: #000;
+    color: #fff;
+    border-radius: 40px;
+    background: linear-gradient(to bottom, #a6d900 0%, #ff4454 100%);
+    opacity: 0.5;
+    animation: huerotator 3s infinite alternate;
+}
+
+@keyframes huerotator {
+    0% {
+        -webkit-filter: hue-rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        -webkit-filter: hue-rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+
+.article-image-box {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    vertical-align: bottom;
+    width: 50%;
+}
+
+.article-image-box img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    opacity: 0.7;
+    border: 3px solid rgb(0, 0, 0, 0.5);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.8s ease-in-out;
+    transition: all 0.7s ease-in-out;
+}
+
+.article-image-box:hover img {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.caption {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-transition: 0.3s;
+    transition: 0.6s;
+    opacity: 1;
+    color: #ddd;
+    text-align: center;
+}
+
+.article-image-box:hover .caption {
+    top: 0;
+    left: 0;
+}
+
+.article-image-box>a>.caption {
+    font-size: 14px;
+    line-height: 3em;
+}
+
+.article-image-box>a>.caption>h3 {
+    margin: 30px auto;
+    font-size: 50px;
+}
+
+/*-----------------------
+記事へのリンク2つここまで
+-----------------------*/
+
+/*-----------------------
+プロフィール
+-----------------------*/
+
+.profile {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+}
+
+.main-profile {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/portfolio.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.profile>h2 {
+    text-align: center;
+    margin: 10px auto;
+    padding: 15px;
+    width: 30%;
+    background-color: #000;
+    color: #fff;
+    border-radius: 40px;
+    background: linear-gradient(to bottom, #a6d900 0%, #ff4454 100%);
+    opacity: 0.5;
+    animation: huerotator 3s infinite alternate;
+}
+
+.main-profile p {
+    color: #fff;
+    margin: 0 0 0 20px;
+}
+
+.my-profile {
+    position: relative;
+    margin-top: 10px;
+    z-index: 3;
+}
+
+.my-profile h3 {
+    margin: 20px;
+    color: #fff;
+}
+
+.trigger {
+    position: relative;
+    margin-top: 50px;
+    z-index: 1;
+}
+
+.trigger h3 {
+    margin: 20px;
+    color: #fff;
+}
+
+.aim {
+    position: relative;
+    margin-top: 50px;
+    z-index: 1;
+}
+
+.aim h3 {
+    margin: 20px;
+    color: #fff;
+}
+
+/*-----------------------
+プロフィールここまで
+-----------------------*/
+
+/*-----------------------
+ ポートフォリオ
+-----------------------*/
+
+.portfolio-wrapper {
+    height: 600px;
+}
+
+.portfolio>h2 {
+    text-align: center;
+    margin: 10px auto;
+    padding: 15px;
+    width: 30%;
+    background-color: #000;
+    color: #fff;
+    border-radius: 40px;
+    background: linear-gradient(to bottom, #a6d900 0%, #ff4454 100%);
+    opacity: 0.5;
+    animation: huerotator 3s infinite alternate;
+}
+
+.portfolio-wrapper h2 {
+    margin: 30px 0 20px 0;
+    font-size: 20px;
+}
+
+.portfolio-wrapper a {
+    margin: 10px 20px 0 20px;
+    font-size: 14px;
+    padding: 0 0 0 0px;
+    text-align: left;
+    display: block;
+}
+
+.portfolio-wrapper p {
+    margin: 0 20px 20px 20px;
+    font-size: 14px;
+    padding: 0 0 0 0px;
+    text-align: left;
+    display: block;
+}
+
+.promatch {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    background-image: url("portfolio/promatch.jpg");
+    background-size: 150% 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-wrapper {
+    font-size: 0;
+}
+
+.websites {
+    width: 25%;
+    height: 100%;
+    background-image: url("portfolio/web.jpg");
+    background-size: 150% 100%;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+.my-blog {
+    width: 25%;
+    height: 100%;
+    background-image: url("portfolio/blog.jpg");
+    background-size: 120% 100%;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+.other {
+    width: 25%;
+    height: 100%;
+    background-image: url("portfolio/other.jpg");
+    background-size: 120% 100%;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-caption {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-transition: 0.3s;
+    transition: 0.6s;
+    opacity: 1;
+    color: #ddd;
+    text-align: center;
+}
+
+.portfolio-slide:hover .portfolio-caption {
+    top: 0;
+    left: 0;
+}
+
+/*-----------------------
+ ポートフォリオここまで
+-----------------------*/
+
+/*-----------------------
+ スキル
+-----------------------*/
+.main-skills {
+    height: 300px;
+    background-color: blue;
+}
+
+/*-----------------------
+ スキルここまで
+-----------------------*/
+
+.opacity {
+    /* アニメーション設定*/
+    animation-name: opacity-anime;
+    animation-duration: 2.5s;
+    /*アニメーション時間*/
+    animation-timing-function: ease-out;
+    /*アニメーションさせるイージング*/
+    animation-delay: 0s;
+    /*アニメーション開始させる時間*/
+    animation-iteration-count: 1;
+    /*繰り返し回数*/
+    animation-direction: normal;
+    /*往復処理をするかどうか*/
+    animation-fill-mode: forwards;
+    /*アニメーション後のスタイルをどうするか*/
+}
+
+@keyframes opacity-anime {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*-----------------------
+横からスライドアニメーション
+-----------------------*/
+
+.slide::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    content: "";
+    background: rgb(255, 255, 255, 0.6);
+    transform-origin: center center;
+    transform: scale(0, 1);
+    transition: transform 0.3s;
+}
+
+.slide:hover::before {
+    transform: scale(1, 1);
+}
+
+.slide-from-up::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.5;
+    content: "";
+    background: #ff1300;
+    transform-origin: left top;
+    transform: scale(1, 0);
+    transition: transform 0.3s;
+}
+
+.slide-from-up:hover::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+
+/*-----------------------
+横からスライドアニメーションここまで
+-----------------------*/
