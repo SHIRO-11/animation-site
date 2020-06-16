@@ -948,7 +948,7 @@
     height:100%;
     opacity:0;
     z-index:9999;
-    transition:1s;
+    transition:0.8s;
 }
 
 .trans-anime.start{
